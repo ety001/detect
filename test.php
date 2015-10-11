@@ -7,14 +7,20 @@ function test_cache(){
     sleep(6);
     $v1 = get_v('hello');
     if($v == 123){
-        echo 'test_cache    '.'ok';
+        var_dump('test_cache    '.'ok');
     } else {
-        echo 'test_cache    '.'fail';
+        var_dump('test_cache    '.'fail');
     }
     if($v1 == null){
-        echo 'test_cache    '.'ok';
+        var_dump('test_cache    '.'ok');
     } else {
-        echo 'test_cahce    '.'fail';
+        var_dump('test_cahce    '.'fail');
     }
 }
 test_cache();
+
+function test_vlog(){
+    $a = array('a'=>232, 'b'=>'dfsdf');
+    vlog($a);
+}
+test_vlog();
