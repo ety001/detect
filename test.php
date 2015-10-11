@@ -2,9 +2,9 @@
 require_once 'lib.php';
 
 function test_cache(){
-    set_v('hello', '123', 5);
+    set_v('hello', '123', 2);
     $v = get_v('hello');
-    sleep(6);
+    sleep(3);
     $v1 = get_v('hello');
     if($v == 123){
         var_dump('test_cache    '.'ok');
@@ -21,6 +21,6 @@ test_cache();
 
 function test_vlog(){
     $a = array('a'=>232, 'b'=>'dfsdf');
-    vlog($a);
+    vlog('test_vlog', $a);
 }
 test_vlog();
