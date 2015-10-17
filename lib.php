@@ -7,9 +7,7 @@ function set_v($k, $v, $timeout=3600*24){
 function get_v($k){
     $content = file_get_contents('cache/'.md5($k));
     $val = explode('|', $content);
-
-    vlog('get_v', $val);
-    if($val[1]>time()){
+    if($val[1]<time()){
         return null;
     } else {
         return $val[0];
