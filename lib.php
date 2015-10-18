@@ -22,4 +22,11 @@ function vlog($msg, $v){
     } else {
         file_put_contents($filename , $msg . "\n" . var_export($v, true)."\n--{$t}\n\n" );
     }
+    return $filename;
+}
+
+function vprint($msg=''){
+    printf($msg);
+    printf("\n");
+    flush();
 }
